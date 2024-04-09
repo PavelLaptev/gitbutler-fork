@@ -10,7 +10,8 @@
 	export let isLaneCollapsed: boolean;
 
 	const baseBranch = getContextStore(BaseBranch);
-	const branch = getContextStore(Branch);
+	const branch = 
+    getContextStore(Branch);
 </script>
 
 {#if !$branch.upstream}
@@ -48,7 +49,9 @@
 			help="Branch name that will be used when pushing. You can change it from the lane menu."
 			verticalOrientation={isLaneCollapsed}
 		>
-			origin/{$branch.upstreamName ? $branch.upstreamName : normalizeBranchName($branch.name)}</Tag
+			origin/{$branch.upstreamName
+				? $branch.upstreamName
+				: normalizeBranchName($branch.name)}</Tag
 		>
 	{/if}
 {:else}
